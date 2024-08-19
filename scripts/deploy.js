@@ -28,7 +28,8 @@ async function main() {
   const contract = await chai.deploy(); //instance of contract
 
   await contract.waitForDeployment();
-  console.log("Address of contract:", contract.address);
+  const contractAddress = await contract.getAddress();
+  console.log("Address of contract:", contractAddress);
 
   const addresses = [
     owner.address,
