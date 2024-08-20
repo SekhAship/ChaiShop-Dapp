@@ -15,7 +15,7 @@ function App() {
     contract: null,
   });
 
-  const [account, setAccount] = useState('None');
+  const [account, setAccount] = useState('No account connected');
 
   useEffect(() => {
     const connectWallet = async () => {
@@ -51,8 +51,7 @@ function App() {
   }
     , []);
 
-  console.log(state);
-
+  
   return (
     <div className="App">
       <h1 className="text-center mt-5">Chai Shop</h1>

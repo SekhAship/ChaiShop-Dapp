@@ -30,7 +30,7 @@ const Memos = ({state}) => {
         </thead>
         <tbody>
             {memos.map((memo, index) => (
-                <tr key={memo.timestamp}>
+                <tr key={Math.random()}>
                     <td className="text-success fw-bold">{memo.name}</td>
                     <td>{memo.message}</td>
                     <td>{new Date(Number(String(memo.timestamp))*1000).toLocaleString()}</td>

@@ -32,7 +32,7 @@ const Buy = ({state}) => {
                                 <input type="text" class="form-control" id="message" placeholder="Enter Message"/>
                             </div>
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">Pay</button>
+                                <button type="submit" class="btn btn-primary" disabled={!state.contract}>Pay</button>
                             </div>
                         </form>
                         
