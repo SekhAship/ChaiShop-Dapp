@@ -13,6 +13,9 @@ const Memos = ({state}) => {
          contract && memoMessage();
 
     }, [contract]);
+    
+   
+
   return (
 <div className="justify-content-center mt-5">
     <h3 className="text-primary">Messages</h3>
@@ -30,7 +33,7 @@ const Memos = ({state}) => {
                 <tr key={memo.timestamp}>
                     <td className="text-success fw-bold">{memo.name}</td>
                     <td>{memo.message}</td>
-                    <td>{String(memo.timestamp)}</td>
+                    <td>{new Date(Number(String(memo.timestamp))*1000).toLocaleString()}</td>
                     <td className="text-info">{memo.from}</td>
                 </tr>
             ))}

@@ -24,17 +24,17 @@ function App() {
       try {
         const etherium = window.ethereum;//
         if (etherium) {
-          const accounts = await etherium.request({ method: 'eth_requestAccounts' });//
+          const account = await etherium.request({ method: 'eth_requestAccounts' });//
 
-          window.ethereum.on('chainChanged', () => window.location.reload());
+          etherium.on('chainChanged', () => window.location.reload());
 
-          window.ethereum.on('accountsChanged', () => {
+          etherium.on('accountsChanged', () => {
             window.location.reload();
           }
           );
 
           // const provider = new ethers.providers.Web3Provider(window.ethereum);
-          const provider = new ethers.BrowserProvider(window.ethereum);
+          const provider = new ethers.BrowserProvider(etherium);
           const signer = await provider.getSigner();
           const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
